@@ -1,0 +1,51 @@
+.reels-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .reel {
+    position: relative;
+    width: 100%; /* El ancho será 100% del contenedor */
+    max-width: 100%; /* Para que no se expanda más allá del contenedor */
+    margin-bottom: 16px; /* Espaciado entre videos */
+  }
+  
+  .reel-video {
+    width: 100%;
+    height: auto;
+    max-height: 90vh; /* Limitar la altura del video para que no se sobrepasen */
+    object-fit: contain; /* Mantener la relación de aspecto original */
+    border-radius: 8px; /* Bordes redondeados, opcional */
+  }  
+  
+  .overlay {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    right: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 2;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .actions {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  

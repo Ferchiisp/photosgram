@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Reels</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="reels-container">
+    <div *ngFor="let reel of reels; let i = index" class="reel" [id]="'reel-' + i">
+      <video #video class="reel-video" autoplay loop muted playsinline (click)="togglePlay(i)">
+        <source [src]="reel.videoUrl" type="video/mp4" />
+        Tu navegador no soporta videos.
+      </video>
+
+      <div class="overlay">
+        <div class="user-info">
+          <img [src]="reel.userImage" class="user-avatar" />
+          <p>{{ reel.username }}</p>
+        </div>
+
+        <div class="actions">
+          <ion-icon name="heart" (click)="likeReel(i)"></ion-icon>
+          <ion-icon name="chatbubble" (click)="commentReel(i)"></ion-icon>
+          <ion-icon name="paper-plane" (click)="shareReel(i)"></ion-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+

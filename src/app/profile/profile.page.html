@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Perfil</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="profile-header">
+    <img src="assets/profile-pic.jpg" alt="Profile Picture" class="profile-img">
+    <div class="stats">
+      <div>
+        <h3>12</h3>
+        <p>Publicaciones</p>
+      </div>
+      <div>
+        <h3>500</h3>
+        <p>Seguidores</p>
+      </div>
+      <div>
+        <h3>320</h3>
+        <p>Seguidos</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="profile-info">
+    <h2>ferchiis_p</h2>
+    <p>♡✧*。And I want a love that falls as fast ✧*。♡</p>
+    <ion-button expand="full" fill="outline">Editar perfil</ion-button>
+  </div>
+
+  <ion-segment [(ngModel)]="selectedSegment">
+    <ion-segment-button value="posts">
+      <ion-icon name="grid-outline"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="tags">
+      <ion-icon name="person-outline"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
+
+  <div *ngIf="selectedSegment === 'posts'" class="gallery">
+    <img *ngFor="let post of posts" [src]="post.image" alt="Post">
+  </div>
+
+  <div *ngIf="selectedSegment === 'tags'">
+    <p>Fotos en las que fuiste etiquetado</p>
+  </div>
+</ion-content>
